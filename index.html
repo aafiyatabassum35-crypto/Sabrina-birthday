@@ -2,126 +2,137 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Sabrina Turns 2 🎀</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 2nd Birthday Sabrina 🎀</title>
 
 <style>
-body{
-    margin:0;
-    font-family:'Segoe UI',sans-serif;
-    background:linear-gradient(135deg,#e9d5ff,#fdf2f8);
-    overflow:hidden;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', cursive;
 }
 
-/* SCREENS */
-.screen{
-    position:fixed;
-    inset:0;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:linear-gradient(135deg,#d8b4fe,#fbcfe8);
-    color:white;
-    z-index:10;
-}
-.hidden{display:none;}
-
-h1{font-size:28px;margin:10px;}
-p{font-size:16px;}
-.tap{animation:blink 1.4s infinite;}
-
-@keyframes blink{
-    50%{opacity:0.5;}
+body {
+  overflow-x: hidden;
+  background: lavender;
 }
 
-/* FLOATING FLOWERS */
-.float{
-    position:absolute;
-    font-size:26px;
-    animation:floatUp 12s linear infinite;
-}
-@keyframes floatUp{
-    from{transform:translateY(100vh);}
-    to{transform:translateY(-10vh);}
+/* ---------- MUSIC ---------- */
+audio {
+  display: none;
 }
 
-/* CARTOON ANIMALS */
-.animal{
-    position:absolute;
-    bottom:10px;
-    font-size:40px;
-    animation:move 8s linear infinite;
-}
-@keyframes move{
-    from{left:-10%;}
-    to{left:110%;}
+/* ---------- SECTIONS ---------- */
+.section {
+  min-height: 100vh;
+  padding: 30px 15px;
+  text-align: center;
+  position: relative;
 }
 
-/* BALLOONS */
-.balloon{
-    position:absolute;
-    bottom:-100px;
-    font-size:30px;
-    animation:balloonUp 6s ease-in infinite;
-}
-@keyframes balloonUp{
-    0%{transform:translateY(0);}
-    100%{transform:translateY(-120vh);}
+/* ---------- COLORS ---------- */
+.one { background: linear-gradient(#fbe7ff, #e0c3ff); }
+.two { background: linear-gradient(#fff1c1, #ffd6a5); }
+.three { background: linear-gradient(#c1f0f6, #bdb2ff); }
+.four { background: linear-gradient(#ffd1dc, #ffb3c6); }
+
+/* ---------- TEXT ---------- */
+h1 {
+  font-size: 10vw;
+  max-font-size: 60px;
 }
 
-/* CARD */
-.card{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    background:white;
-    width:94%;
-    max-width:420px;
-    padding:25px;
-    border-radius:30px;
-    box-shadow:0 20px 40px rgba(0,0,0,0.25);
-    text-align:center;
+h2 {
+  font-size: 7vw;
+  margin-top: 10px;
 }
 
-.cake{font-size:70px;}
-.age{color:#a855f7;font-size:22px;}
-.message{color:#555;font-size:15px;line-height:1.6;}
-
-.footer{
-    margin-top:15px;
-    font-weight:bold;
-    color:#7c3aed;
+p {
+  font-size: 5vw;
+  margin-top: 15px;
 }
 
-/* SLIDER */
-.slider{
-    position:relative;
-    width:100%;
-    height:150px;
-    overflow:hidden;
-    border-radius:20px;
+@media (min-width: 600px) {
+  h1 { font-size: 50px; }
+  h2 { font-size: 36px; }
+  p { font-size: 24px; }
 }
-.slider img{
-    width:100%;
-    height:150px;
-    object-fit:cover;
-    position:absolute;
-    opacity:0;
-    animation:slide 12s infinite;
-}
-.slider img:nth-child(1){animation-delay:0s;}
-.slider img:nth-child(2){animation-delay:4s;}
-.slider img:nth-child(3){animation-delay:8s;}
-.slider img:nth-child(4){animation-delay:12s;}
 
-@keyframes slide{
-    0%{opacity:0;}
-    10%{opacity:1;}
-    30%{opacity:1;}
-    40%{opacity:0;}
-    100%{opacity:0;}
+/* ---------- BALLOONS ---------- */
+.balloon {
+  position: absolute;
+  font-size: 12vw;
+  animation: fly 6s linear infinite;
+}
+
+@keyframes fly {
+  0% { bottom: -10%; opacity: 1; }
+  100% { bottom: 110%; opacity: 0; }
+}
+
+/* ---------- ANIMALS ---------- */
+.animal {
+  font-size: 15vw;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* ---------- SLIDER ---------- */
+.slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.slider img {
+  width: 85vw;
+  max-width: 320px;
+  height: auto;
+  border-radius: 25px;
+  scroll-snap-align: center;
+  object-fit: contain;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ---------- CAKE ---------- */
+.cake {
+  font-size: 30vw;
+  animation: glow 2s infinite;
+  cursor: pointer;
+}
+
+@keyframes glow {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.cut {
+  animation: cut 1s forwards;
+}
+
+@keyframes cut {
+  0% { transform: scale(1); }
+  100% { transform: scale(0.8) rotate(5deg); }
+}
+
+/* ---------- CONFETTI ---------- */
+.confetti {
+  position: fixed;
+  font-size: 6vw;
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  0% { top: -10%; opacity: 1; }
+  100% { top: 110%; opacity: 0; }
 }
 </style>
 </head>
@@ -129,98 +140,79 @@ p{font-size:16px;}
 <body>
 
 <!-- MUSIC -->
-<audio id="music" loop>
+<audio id="music" autoplay loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- FLOATING -->
-<span class="float" style="left:10%">🌸</span>
-<span class="float" style="left:30%">💜</span>
-<span class="float" style="left:50%">🎀</span>
-<span class="float" style="left:70%">🌷</span>
+<!-- SECTION 1 -->
+<div class="section one">
+  <div class="balloon" style="left:10%">🎈</div>
+  <div class="balloon" style="left:40%">🎈</div>
+  <div class="balloon" style="left:70%">🎈</div>
 
-<!-- ANIMALS -->
-<div class="animal">🐰</div>
-<div class="animal" style="animation-delay:2s;">🐻</div>
-<div class="animal" style="animation-delay:4s;">🐶</div>
+  <h1>🎀 Happy Birthday 🎀</h1>
+  <h2>Sabrina 🧸</h2>
 
-<!-- BALLOONS -->
-<div class="balloon" style="left:20%">🎈</div>
-<div class="balloon" style="left:50%">🎈</div>
-<div class="balloon" style="left:80%">🎈</div>
-
-<!-- SCREEN 1 -->
-<div class="screen" id="s1" onclick="next1()">
-<h1>🌸 Hello Little Princess 🌸</h1>
-<p>A magical birthday surprise ✨</p>
-<div class="tap">Tap to continue 🎀</div>
+  <div class="animal">🐻🐰🦄</div>
+  <p>Our little princess 👑✨</p>
 </div>
 
-<!-- SCREEN 2 -->
-<div class="screen hidden" id="s2" onclick="next2()">
-<h1>🎂 Guess What 🎂</h1>
-<p>Someone cute turns TWO 💕</p>
-<div class="tap">Tap again 🎁</div>
+<!-- SECTION 2 -->
+<div class="section two">
+  <h2>📸 Cute Moments 📸</h2>
+
+  <div class="slider">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+    <img src="photo4.jpg">
+  </div>
+
+  <p>Swipe 👉 to see magic 💕</p>
 </div>
 
-<!-- SCREEN 3 -->
-<div class="screen hidden" id="s3" onclick="next3()">
-<h1>🦄 Magic is coming 🦄</h1>
-<p>Animals, balloons & love 💜</p>
-<div class="tap">Tap once more ✨</div>
+<!-- SECTION 3 -->
+<div class="section three">
+  <h2>🎂 Cut the Cake 🎂</h2>
+  <p>Tap the cake for surprise 🎉</p>
+
+  <div class="cake" onclick="cutCake()">🎂</div>
 </div>
 
-<!-- SCREEN 4 -->
-<div class="screen hidden" id="s4" onclick="showCard()">
-<h1>🎉 It’s Sabrina 🎉</h1>
-<p>Your big surprise 💖</p>
-<div class="tap">Tap to open 🎀</div>
-</div>
+<!-- SECTION 4 -->
+<div class="section four">
+  <h2>🎉 Lots of Love 🌷 For my precious little blessing 🌷 🎉</h2>
+  <p>
 
-<!-- FINAL CARD -->
-<div class="card hidden" id="card">
-<h1>Happy Birthday</h1>
-<div class="age">Sabrina Turns 2 💜</div>
-<div class="cake">🎂</div>
+🌷 For my precious little blessing 🌷
 
-<div class="slider">
-<img src="photo1.jpg">
-<img src="photo2.jpg">
-<img src="photo3.jpg">
-<img src="photo4.jpg">
-</div>
+My dearest little one, today we thank Allah ﷻ for the beautiful gift of you. At just two years old, your smile is already a mercy and your laughter is a reminder of Allah’s kindness. May Allah keep you under His loving protection, grant you a life filled with health, īmān, and endless joy, and make you a source of comfort and happiness for everyone around you. May He guide your tiny steps towards goodness, surround you with angels, and write for you a future full of barakah, peace, and light. Ameen 🤍✨  🌈✨</p>
+  <h2>💜 With love, Affu Khala 💜</h2>
 
-<p class="message">
-My sweet little angel 💕  
-May your world always be filled  
-with smiles, toys, magic,  
-flowers and happiness 🌸✨
-</p>
-
-<div class="footer">
-With lots of love 💜  
-— Affu Khala
-</div>
+  <div class="animal">🐼🐥🦋</div>
 </div>
 
 <script>
-function next1(){
-document.getElementById("s1").classList.add("hidden");
-document.getElementById("s2").classList.remove("hidden");
-document.getElementById("music").play();
+/* --------- CAKE CUT --------- */
+function cutCake() {
+  const cake = document.querySelector('.cake');
+  cake.classList.add('cut');
+
+  for (let i = 0; i < 30; i++) {
+    const conf = document.createElement('div');
+    conf.className = 'confetti';
+    conf.innerHTML = ['🎉','✨','💖','🎈','🧁'][Math.floor(Math.random()*5)];
+    conf.style.left = Math.random() * 100 + 'vw';
+    document.body.appendChild(conf);
+
+    setTimeout(() => conf.remove(), 3000);
+  }
 }
-function next2(){
-document.getElementById("s2").classList.add("hidden");
-document.getElementById("s3").classList.remove("hidden");
-}
-function next3(){
-document.getElementById("s3").classList.add("hidden");
-document.getElementById("s4").classList.remove("hidden");
-}
-function showCard(){
-document.getElementById("s4").classList.add("hidden");
-document.getElementById("card").classList.remove("hidden");
-}
+
+/* --------- FORCE MUSIC AFTER ANY TOUCH --------- */
+document.body.addEventListener('click', () => {
+  document.getElementById('music').play();
+}, { once: true });
 </script>
 
 </body>
