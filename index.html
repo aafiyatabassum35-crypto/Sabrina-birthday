@@ -3,63 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy 2nd Birthday Sabrina 🎀</title>
+<title>Happy Birthday Sabrina 🎀</title>
 
 <style>
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: 'Comic Sans MS', cursive;
 }
 
 body {
-  overflow-x: hidden;
-  background: lavender;
+  overflow: hidden;
 }
 
-/* ---------- MUSIC ---------- */
-audio {
-  display: none;
-}
-
-/* ---------- SECTIONS ---------- */
+/* SECTIONS */
 .section {
-  min-height: 100vh;
-  padding: 30px 15px;
+  width: 100vw;
+  height: 100vh;
+  display: none;
   text-align: center;
-  position: relative;
+  padding: 20px;
 }
 
-/* ---------- COLORS ---------- */
+.section.active {
+  display: block;
+}
+
+/* COLORS */
 .one { background: linear-gradient(#fbe7ff, #e0c3ff); }
 .two { background: linear-gradient(#fff1c1, #ffd6a5); }
 .three { background: linear-gradient(#c1f0f6, #bdb2ff); }
 .four { background: linear-gradient(#ffd1dc, #ffb3c6); }
 
-/* ---------- TEXT ---------- */
-h1 {
-  font-size: 10vw;
-  max-font-size: 60px;
-}
-
-h2 {
-  font-size: 7vw;
-  margin-top: 10px;
-}
-
-p {
-  font-size: 5vw;
-  margin-top: 15px;
-}
+/* TEXT */
+h1 { font-size: 10vw; }
+h2 { font-size: 7vw; }
+p  { font-size: 5vw; margin-top: 10px; }
 
 @media (min-width: 600px) {
   h1 { font-size: 50px; }
   h2 { font-size: 36px; }
-  p { font-size: 24px; }
+  p  { font-size: 24px; }
 }
 
-/* ---------- BALLOONS ---------- */
+/* BALLOONS */
 .balloon {
   position: absolute;
   font-size: 12vw;
@@ -71,24 +59,23 @@ p {
   100% { bottom: 110%; opacity: 0; }
 }
 
-/* ---------- ANIMALS ---------- */
+/* ANIMALS */
 .animal {
-  font-size: 15vw;
+  font-size: 16vw;
   animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
   0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  50% { transform: translateY(-25px); }
 }
 
-/* ---------- SLIDER ---------- */
+/* SLIDER */
 .slider {
   display: flex;
   overflow-x: auto;
   gap: 20px;
-  padding: 20px;
-  scroll-snap-type: x mandatory;
+  margin-top: 20px;
 }
 
 .slider img {
@@ -96,21 +83,20 @@ p {
   max-width: 320px;
   height: auto;
   border-radius: 25px;
-  scroll-snap-align: center;
   object-fit: contain;
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* ---------- CAKE ---------- */
+/* CAKE */
 .cake {
-  font-size: 30vw;
-  animation: glow 2s infinite;
+  font-size: 32vw;
   cursor: pointer;
+  animation: glow 2s infinite;
 }
 
 @keyframes glow {
   0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  50% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
 
@@ -120,10 +106,10 @@ p {
 
 @keyframes cut {
   0% { transform: scale(1); }
-  100% { transform: scale(0.8) rotate(5deg); }
+  100% { transform: scale(0.85) rotate(5deg); }
 }
 
-/* ---------- CONFETTI ---------- */
+/* CONFETTI */
 .confetti {
   position: fixed;
   font-size: 6vw;
@@ -131,88 +117,89 @@ p {
 }
 
 @keyframes fall {
-  0% { top: -10%; opacity: 1; }
-  100% { top: 110%; opacity: 0; }
+  0% { top: -10%; }
+  100% { top: 110%; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- MUSIC -->
-<audio id="music" autoplay loop>
+<audio id="music" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <!-- SECTION 1 -->
-<div class="section one">
+<div class="section one active">
   <div class="balloon" style="left:10%">🎈</div>
-  <div class="balloon" style="left:40%">🎈</div>
-  <div class="balloon" style="left:70%">🎈</div>
+  <div class="balloon" style="left:50%">🎈</div>
+  <div class="balloon" style="left:80%">🎈</div>
 
   <h1>🎀 Happy Birthday 🎀</h1>
-  <h2>Sabrina 🧸</h2>
-
+  <h2>Sabrina turns 2 🧸</h2>
   <div class="animal">🐻🐰🦄</div>
-  <p>Our little princess 👑✨</p>
+  <p>Tap anywhere ✨</p>
 </div>
 
 <!-- SECTION 2 -->
 <div class="section two">
-  <h2>📸 Cute Moments 📸</h2>
-
+  <h2>📸 Sweet Moments 📸</h2>
   <div class="slider">
     <img src="photo1.jpg">
     <img src="photo2.jpg">
     <img src="photo3.jpg">
     <img src="photo4.jpg">
   </div>
-
-  <p>Swipe 👉 to see magic 💕</p>
+  <p>Swipe photos 💕</p>
 </div>
 
 <!-- SECTION 3 -->
 <div class="section three">
   <h2>🎂 Cut the Cake 🎂</h2>
-  <p>Tap the cake for surprise 🎉</p>
-
-  <div class="cake" onclick="cutCake()">🎂</div>
+  <p>Tap the cake 🎉</p>
+  <div class="cake" onclick="cutCake(event)">🎂</div>
 </div>
 
 <!-- SECTION 4 -->
 <div class="section four">
-  <h2>🎉 Lots of Love 🌷 For my precious little blessing 🌷 🎉</h2>
+  <h2>🤍 For My Precious Little Blessing 🤍</h2>
   <p>
-
-🌷 For my precious little blessing 🌷
-
-My dearest little one, today we thank Allah ﷻ for the beautiful gift of you. At just two years old, your smile is already a mercy and your laughter is a reminder of Allah’s kindness. May Allah keep you under His loving protection, grant you a life filled with health, īmān, and endless joy, and make you a source of comfort and happiness for everyone around you. May He guide your tiny steps towards goodness, surround you with angels, and write for you a future full of barakah, peace, and light. Ameen 🤍✨  🌈✨</p>
+   ✨ my dearest little one, today we thank Allahﷻ for the beautiful gift of you. at just 2 year old, your smile is already a mercy and your laughter is a reminder
+    of Allah kindness.May Allah ﷻ protect you,keep you under his loving protection,grand you a life filled with health iman and endless joy,and make you a source of comfort and happiness for everyone around you,may he guide your tiny step
+    towards goodness, surround you with angles and write for you a future full of barakah, peace,and light. Ameen ✨ 
+  </p>
   <h2>💜 With love, Affu Khala 💜</h2>
-
-  <div class="animal">🐼🐥🦋</div>
+  <div class="animal">🐼🦋🐥</div>
 </div>
 
 <script>
-/* --------- CAKE CUT --------- */
-function cutCake() {
+let current = 0;
+const sections = document.querySelectorAll('.section');
+const music = document.getElementById('music');
+
+/* TAP TO NEXT PAGE */
+document.body.addEventListener('click', () => {
+  music.play();
+  sections[current].classList.remove('active');
+  current = (current + 1) % sections.length;
+  sections[current].classList.add('active');
+});
+
+/* CAKE CUT */
+function cutCake(e) {
+  e.stopPropagation();
   const cake = document.querySelector('.cake');
   cake.classList.add('cut');
 
-  for (let i = 0; i < 30; i++) {
-    const conf = document.createElement('div');
-    conf.className = 'confetti';
-    conf.innerHTML = ['🎉','✨','💖','🎈','🧁'][Math.floor(Math.random()*5)];
-    conf.style.left = Math.random() * 100 + 'vw';
-    document.body.appendChild(conf);
-
-    setTimeout(() => conf.remove(), 3000);
+  for (let i = 0; i < 25; i++) {
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.innerHTML = ['🎉','✨','💖','🎈','🧁'][Math.floor(Math.random()*5)];
+    c.style.left = Math.random() * 100 + 'vw';
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 3000);
   }
 }
-
-/* --------- FORCE MUSIC AFTER ANY TOUCH --------- */
-document.body.addEventListener('click', () => {
-  document.getElementById('music').play();
-}, { once: true });
 </script>
 
 </body>
